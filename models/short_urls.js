@@ -1,3 +1,4 @@
+import { mongo } from 'mongoose';
 
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
@@ -16,3 +17,7 @@ const UrlSchema = new Schema({
         required: true
     }
 })
+
+const ShortUrl = mongoose.model('ShortUrl',UrlSchema);
+
+module.exports = ShortUrl;

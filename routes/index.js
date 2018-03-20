@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
-const base64 = require('base64-js');
+const base64 = require('nodejs-base64-encode');
+const ShortUrl = require('../models/short_urls');
+
 
 
 
@@ -11,6 +13,7 @@ router.get('/', function(req, res, next) {
 
 router.post('/url_shortner',function(req,res){
   const long__url = req.body.long_url;
+
 
 })
 
