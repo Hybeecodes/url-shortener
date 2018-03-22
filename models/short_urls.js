@@ -2,6 +2,7 @@
 
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const autoIncrement = require("mongodb-autoincrement");
 
 const UrlSchema = new Schema({
     id:{
@@ -17,6 +18,8 @@ const UrlSchema = new Schema({
         required: true
     }
 })
+
+UrlSchema.plugin(autoIncrement.mongoosePlugin);
 
 const ShortUrl = mongoose.model('ShortUrl',UrlSchema);
 

@@ -8,7 +8,7 @@ const ShortUrl = require('../models/short_urls');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.sendFile('/home/megastar/Documents/projects/nodejs/url-shortner/index.html');
 });
 
 router.post('/url_shortner',function(req,res){
