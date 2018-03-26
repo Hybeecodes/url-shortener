@@ -5,8 +5,8 @@ const Schema = mongoose.Schema;
 const autoIncrement = require("mongodb-autoincrement");
 
 const UrlSchema = new Schema({
-    id:{
-        type:Number,
+    url_id:{
+        type:String,
         required:true
     },
     long_url:{
@@ -19,8 +19,19 @@ const UrlSchema = new Schema({
     }
 })
 
-UrlSchema.plugin(autoIncrement.mongoosePlugin);
+// UrlSchema.plugin(autoIncrement.mongoosePlugin);
 
 const ShortUrl = mongoose.model('ShortUrl',UrlSchema);
 
 module.exports = ShortUrl;
+
+// module.exports.genUniqueId = function() {
+//     var unique = // code to generate unique string
+//     // check if unique string exists
+//     ShortUrl.findOne({url_id:unique},function(err,url){
+//         if(url){
+            
+//         }
+//     })
+    
+// }
