@@ -13,10 +13,11 @@ var uid = new ShortUniqueId();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.sendFile('/home/megastar/Documents/projects/nodejs/url-shortner/index.html');
+  res.sendFile(__dirname+'/index.html');
 });
 
 router.post('/shorten',function(req,res){
+  console.log('here');
   const long_url = req.body.url;
   // first check if it has been shortened before
   Url.findOne({long_url:long_url},function(err,url){
